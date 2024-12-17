@@ -7,7 +7,7 @@
           placeholder="Поиск..."
           class="filter__input"
         />
-  
+
         <select v-model="selectedCategory" class="filter__select">
           <option value="">Все категории</option>
           <option
@@ -27,7 +27,7 @@
       </transition-group>
   
       <p v-if="filteredItems.length === 0" class="filter__message">
-        Нет товаров!! Кыш )
+        Нет товаров!! Кыш :)
       </p>
     </div>
   </template>
