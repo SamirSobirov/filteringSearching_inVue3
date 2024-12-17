@@ -1,6 +1,7 @@
 @import './base.css';
 
-.filter-component {
+/* Блок filter */
+.filter {
   padding-top: 100px;
   display: flex;
   flex-direction: column;
@@ -9,35 +10,36 @@
   margin: 0 auto;
 }
 
-.search-input,
-.category-select {
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
-
-}
-
-.search-input {
-  width: 500px;
-}
-
-.category-select {
-  width: 150px;
-}
-
-.box_filter {
+.filter__controls {
   display: flex;
   gap: 20px;
 }
 
-.item-list {
-  list-style: none;
-  padding: 0;
+.filter__input {
+  padding: 8px;
+  width: 500px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
 }
 
-.item {
+.filter__select {
+  padding: 8px;
+  width: 150px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.filter__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filter__item {
   padding: 8px;
   background-color: #f4f4f4;
   border: 1px solid #ddd;
@@ -46,19 +48,19 @@
   transition: all 0.3s ease-in-out;
 }
 
-.no-results {
+.filter__message {
   color: #888;
   text-align: center;
   font-style: italic;
 }
 
-.list-enter-active,
-.list-leave-active {
+.filter__list-enter-active,
+.filter__list-leave-active {
   transition: all 0.5s;
 }
 
-.list-enter,
-.list-leave-to {
+.filter__list-enter,
+.filter__list-leave-to {
   opacity: 0;
   transform: translateY(10px);
 }
