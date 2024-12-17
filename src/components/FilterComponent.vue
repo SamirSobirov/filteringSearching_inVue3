@@ -32,10 +32,16 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from "vue";
 
-const items = [
+interface Item {
+  id: number;
+  name: string;
+  category: string;
+}
+
+const items: Item[] = [
   { id: 1, name: "Огурец", category: "Овощи" },
   { id: 2, name: "Яблоко", category: "Фрукты" },
   { id: 3, name: "Морковь", category: "Овощи" },
@@ -47,19 +53,19 @@ const items = [
   { id: 9, name: "Тыква", category: "Овощи" },
   { id: 10, name: "Арбуз", category: "Фрукты" },
   { id: 11, name: "Лук", category: "Овощи" },
-  { id: 12, name: "Какос", category: "Фрукты" },
+  { id: 12, name: "Кокос", category: "Фрукты" },
   { id: 13, name: "Капуста", category: "Овощи" },
 ];
 
-const searchQuery = ref("");
-const selectedCategory = ref("");
+const searchQuery = ref<string>("");
+const selectedCategory = ref<string>("");
 
-const uniqueCategories = computed(() => {
+const uniqueCategories = computed<string[]>(() => {
   const categories = items.map((item) => item.category);
   return [...new Set(categories)];
 });
 
-const filteredItems = computed(() => {
+const filteredItems = computed<Item[]>(() => {
   return items.filter((item) => {
     const matchesText = item.name
       .toLowerCase()
