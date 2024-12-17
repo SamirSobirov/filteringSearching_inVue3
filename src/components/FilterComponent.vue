@@ -27,7 +27,7 @@
     </transition-group>
 
     <p v-if="filteredItems.length === 0" class="no-results">
-      Нет товаров, соответствующих вашим фильтрам.
+      Нет товаров!!!!!! Кыш )
     </p>
   </div>
 </template>
