@@ -1,7 +1,7 @@
-<script setup lang="ts"></script>
-
 <template>
-  <div></div>
+  <FilterComponent />
 </template>
 
-<style scoped></style>
+<script setup>
+import FilterComponent from './components/FilterComponent.vue';
+</script>
