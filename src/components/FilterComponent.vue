@@ -1,22 +1,24 @@
 <template>
   <div class="filter-component">
+    <div class="box_filter">
     <input
       v-model="searchQuery"
       type="text"
-      placeholder="Search..."
+      placeholder="Поиск..."
       class="search-input"
     />
 
     <select v-model="selectedCategory" class="category-select">
-      <option value="">All Categories</option>
+      <option value="">Все категории</option>
       <option
-        v-for="(category, index) in uniqueCategories"
-        :key="index"
-        :value="category"
+      v-for="(category, index) in uniqueCategories"
+      :key="index"
+      :value="category"
       >
-        {{ category }}
-      </option>
-    </select>
+      {{ category }}
+    </option>
+</select>
+</div>
 
     <transition-group name="list" tag="ul" class="item-list">
       <li v-for="item in filteredItems" :key="item.id" class="item">
@@ -25,7 +27,7 @@
     </transition-group>
 
     <p v-if="filteredItems.length === 0" class="no-results">
-      No items match your filters.
+        Нет товаров, соответствующих вашим фильтрам.
     </p>
   </div>
 </template>
@@ -34,11 +36,11 @@
 import { ref, computed } from "vue";
 
 const items = [
-  { id: 1, name: "Apple", category: "Fruits" },
-  { id: 2, name: "Carrot", category: "Vegetables" },
-  { id: 3, name: "Banana", category: "Fruits" },
-  { id: 4, name: "Broccoli", category: "Vegetables" },
-  { id: 5, name: "Orange", category: "Fruits" },
+  { id: 1, name: "Яблоко", category: "Фрукты" },
+  { id: 2, name: "Морковь", category: "Овощи" },
+  { id: 3, name: "Банан", category: "Фрукты" },
+  { id: 4, name: "Брокколи", category: "Овощи" },
+  { id: 5, name: "Апельсин", category: "Фрукты" },
 ];
 
 const searchQuery = ref("");

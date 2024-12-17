@@ -1,7 +1,7 @@
 @import './base.css';
 
-
 .filter-component {
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -16,6 +16,20 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   outline: none;
+
+}
+
+.search-input {
+  width: 500px;
+}
+
+.category-select {
+  width: 150px;
+}
+
+.box_filter {
+  display: flex;
+  gap: 20px;
 }
 
 .item-list {
@@ -37,11 +51,14 @@
   text-align: center;
   font-style: italic;
 }
+
 .list-enter-active,
 .list-leave-active {
   transition: all 0.5s;
 }
-.list-enter, .list-leave-to {
+
+.list-enter,
+.list-leave-to {
   opacity: 0;
   transform: translateY(10px);
 }
