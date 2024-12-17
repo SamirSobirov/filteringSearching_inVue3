@@ -1,37 +1,37 @@
 <template>
-    <div class="filter">
-      <div class="filter__controls">
-        <input
-          v-model="searchQuery"
-          type="text"
-          placeholder="Поиск..."
-          class="filter__input"
-        />
+  <div class="filter">
+    <div class="filter__controls">
+      <input
+        v-model="searchQuery"
+        type="text"
+        placeholder="Поиск..."
+        class="filter__input"
+      />
 
-        <select v-model="selectedCategory" class="filter__select">
-          <option value="">Все категории</option>
-          <option
-            v-for="(category, index) in uniqueCategories"
-            :key="index"
-            :value="category"
-          >
-            {{ category }}
-          </option>
-        </select>
-      </div>
-  
-      <transition-group name="filter__list" tag="ul" class="filter__list">
-        <li v-for="item in filteredItems" :key="item.id" class="filter__item">
-          {{ item.name }} - {{ item.category }}
-        </li>
-      </transition-group>
-  
-      <p v-if="filteredItems.length === 0" class="filter__message">
-        Нет товаров!! Кыш :)
-      </p>
+      <select v-model="selectedCategory" class="filter__select">
+        <option value="">Все категории</option>
+        <option
+          v-for="(category, index) in uniqueCategories"
+          :key="index"
+          :value="category"
+        >
+          {{ category }}
+        </option>
+      </select>
     </div>
-  </template>
-  
+
+    <transition-group name="filter__list" tag="ul" class="filter__list">
+      <li v-for="item in filteredItems" :key="item.id" class="filter__item">
+        {{ item.name }} - {{ item.category }}
+      </li>
+    </transition-group>
+
+    <p v-if="filteredItems.length === 0" class="filter__message">
+      Нет товаров!! Кыш :)
+    </p>
+  </div>
+</template>
+
 <script setup lang="ts">
 import { ref, computed } from "vue";
 
