@@ -3,5 +3,5 @@
 </template>
 
 <script setup>
-import FilterComponent from './components/FilterComponent.vue';
+import FilterComponent from "./components/FilterComponent.vue";
 </script>
