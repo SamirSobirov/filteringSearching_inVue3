@@ -32,7 +32,6 @@
 
 <script setup lang="ts">
 import { ref, computed } from "vue";
-
 interface Item {
   id: number;
   name: string;
