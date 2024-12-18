@@ -5,14 +5,16 @@
         v-model="searchQuery"
         type="text"
         placeholder="Поиск..."
-        class="filter__input"/>
+        class="filter__input"
+      />
 
       <select v-model="selectedCategory" class="filter__select">
         <option value="">Все категории</option>
         <option
           v-for="(category, index) in uniqueCategories"
           :key="index"
-          :value="category">
+          :value="category"
+        >
           {{ category }}
         </option>
       </select>
